@@ -1,0 +1,253 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+.container {
+    max-width: 210mm; /* A4 width */
+    margin: 0 auto;
+    background: white;
+    padding: 25mm 20mm;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #2c3e50;
+}
+
+.header h1 {
+    font-size: 36px;
+    color: #2c3e50;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #34495e;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.contact-item .icon {
+    font-size: 14px;
+}
+
+.contact-item a {
+    color: #2980b9;
+    text-decoration: none;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+/* Summary */
+.summary {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.7;
+    text-align: justify;
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: #ecf0f1;
+    border-left: 4px solid #3498db;
+}
+
+/* Section */
+.section {
+    margin-bottom: 25px;
+}
+
+.section-title {
+    font-size: 20px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #3498db;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+/* Experience Items */
+.experience-item,
+.education-item {
+    margin-bottom: 20px;
+}
+
+.experience-header,
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+.experience-header h3,
+.project-header h3 {
+    font-size: 16px;
+    color: #2c3e50;
+    margin-bottom: 3px;
+    font-weight: 600;
+}
+
+.company {
+    font-size: 14px;
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+.duration {
+    font-size: 13px;
+    color: #95a5a6;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+.details {
+    margin-left: 20px;
+    margin-top: 8px;
+}
+
+.details li {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 6px;
+    line-height: 1.6;
+}
+
+.teaching-desc {
+    font-size: 13px;
+    color: #555;
+    margin-top: 5px;
+    margin-left: 0;
+}
+
+/* Projects */
+.project-item {
+    margin-bottom: 15px;
+}
+
+.project-description {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.6;
+    margin-top: 5px;
+}
+
+/* Skills */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.skill-category {
+    padding: 12px;
+    background-color: #f8f9fa;
+    border-left: 3px solid #3498db;
+}
+
+.skill-category h4 {
+    font-size: 14px;
+    color: #2c3e50;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.skill-category p {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.languages {
+    font-size: 13px;
+    color: #555;
+    padding: 10px;
+    background-color: #ecf0f1;
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    
+    .container {
+        max-width: 100%;
+        padding: 15mm 15mm;
+        box-shadow: none;
+        margin: 0;
+    }
+    
+    .section {
+        page-break-inside: avoid;
+    }
+    
+    .experience-item,
+    .project-item {
+        page-break-inside: avoid;
+    }
+    
+    a {
+        color: #2c3e50;
+        text-decoration: none;
+    }
+    
+    .contact-item .icon {
+        display: none;
+    }
+}
+
+/* Responsive for smaller screens */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .experience-header,
+    .project-header {
+        flex-direction: column;
+    }
+    
+    .duration {
+        margin-top: 5px;
+    }
+}
