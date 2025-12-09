@@ -5,211 +5,298 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohsen Rezaei - Backend Developer</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header class="header">
+<!-- Language Toggle -->
+<div class="language-toggle">
+    <button id="langToggle" onclick="toggleLanguage()">
+        <i class="fas fa-language"></i>
+        <span id="langText">فارسی</span>
+    </button>
+</div>
+
+<div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="profile">
+            <div class="avatar">
+                <img src="avatar.png" alt="Mohsen Rezaei" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <i class="fas fa-user" style="display: none;"></i>
+            </div>
             <h1>Mohsen Rezaei</h1>
-            <p class="subtitle">Java Backend Developer | Spring Boot & Microservices Specialist</p>
-            
-            <div class="contact-info">
-                <div class="contact-item">
-                    <span class="icon">📧</span>
-                    <a href="mailto:Er.mRezaei@gmail.com">Er.mRezaei@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <span class="icon">📱</span>
-                    <span>(+98) 912 22 55 488</span>
-                </div>
-                <div class="contact-item">
-                    <span class="icon">💼</span>
-                    <a href="https://linkedin.com/in/mohsenr7596" target="_blank">linkedin.com/in/mohsenr7596</a>
-                </div>
-                <div class="contact-item">
-                    <span class="icon">🔗</span>
-                    <a href="https://github.com/mohsenr7596" target="_blank">github.com/mohsenr7596</a>
-                </div>
-                <div class="contact-item">
-                    <span class="icon">📍</span>
-                    <span>Tehran, Iran</span>
+            <p class="title" data-en="Backend Developer" data-fa="توسعه‌دهنده بک‌اند">Backend Developer</p>
+            <p class="subtitle" data-en="Java & Spring Boot" data-fa="جاوا و اسپرینگ بوت">Java & Spring Boot</p>
+        </div>
+
+        <!-- Online Resume Link - Highlighted -->
+        <div class="online-resume">
+            <div class="resume-icon">
+                <i class="fas fa-globe"></i>
+            </div>
+            <div class="resume-text">
+                <span class="resume-label" data-en="View Online Resume" data-fa="مشاهده رزومه آنلاین">View Online Resume</span>
+                <a href="https://er-mrezaei.github.io/resume" target="_blank" dir="ltr">er-mrezaei.github.io/resume</a>
+            </div>
+        </div>
+
+        <!-- Contact Info -->
+        <section class="sidebar-section">
+            <h3><i class="fas fa-address-card"></i> <span data-en="Contact" data-fa="تماس">Contact</span></h3>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:Er.mRezaei@gmail.com" dir="ltr">Er.mRezaei@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span dir="ltr">(+98) 912 22 55 488</span>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-github"></i>
+                <a href="https://github.com/mohsenr7596" target="_blank" dir="ltr">mohsenr7596</a>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-linkedin"></i>
+                <a href="https://linkedin.com/in/mohsenr7596" target="_blank" dir="ltr">mohsenr7596</a>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-calendar"></i>
+                <span data-en="Born: 1996" data-fa="متولد: ۱۳۷۵">Born: 1996</span>
+            </div>
+        </section>
+
+        <!-- Programming Skills -->
+        <section class="sidebar-section">
+            <h3><i class="fas fa-code"></i> <span data-en="Programming Skills" data-fa="مهارت‌های برنامه‌نویسی">Programming Skills</span></h3>
+            <div class="skill">
+                <span class="skill-name">Java</span>
+                <div class="skill-bar">
+                    <div class="skill-level" style="width: 95%;"></div>
                 </div>
             </div>
-        </header>
+            <div class="skill">
+                <span class="skill-name">Spring Boot</span>
+                <div class="skill-bar">
+                    <div class="skill-level" style="width: 90%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">Kotlin</span>
+                <div class="skill-bar">
+                    <div class="skill-level" style="width: 80%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">SQL / PostgreSQL</span>
+                <div class="skill-bar">
+                    <div class="skill-level" style="width: 85%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">Docker / DevOps</span>
+                <div class="skill-bar">
+                    <div class="skill-level" style="width: 75%;"></div>
+                </div>
+            </div>
+        </section>
 
+        <!-- Technical Skills -->
+        <section class="sidebar-section">
+            <h3><i class="fas fa-tools"></i> <span data-en="Tech Stack" data-fa="فناوری‌ها">Tech Stack</span></h3>
+            <div class="tech-tags">
+                <span class="tag"><i class="fas fa-leaf"></i> Spring</span>
+                <span class="tag"><i class="fas fa-database"></i> Hibernate</span>
+                <span class="tag"><i class="fas fa-layer-group"></i> REST API</span>
+                <span class="tag"><i class="fas fa-network-wired"></i> Microservices</span>
+                <span class="tag"><i class="fas fa-server"></i> PostgreSQL</span>
+                <span class="tag"><i class="fas fa-memory"></i> Redis</span>
+                <span class="tag"><i class="fab fa-docker"></i> Docker</span>
+                <span class="tag"><i class="fab fa-gitlab"></i> GitLab CI/CD</span>
+                <span class="tag"><i class="fas fa-search"></i> Elasticsearch</span>
+                <span class="tag"><i class="fab fa-linux"></i> Linux</span>
+            </div>
+        </section>
+
+        <!-- Languages -->
+        <section class="sidebar-section">
+            <h3><i class="fas fa-language"></i> <span data-en="Languages" data-fa="زبان‌ها">Languages</span></h3>
+            <div class="language">
+                <span data-en="Persian" data-fa="فارسی">Persian</span>
+                <span class="level" data-en="Native" data-fa="مادری">Native</span>
+            </div>
+            <div class="language">
+                <span data-en="English" data-fa="انگلیسی">English</span>
+                <span class="level" data-en="Professional" data-fa="حرفه‌ای">Professional</span>
+            </div>
+        </section>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
         <!-- Summary -->
         <section class="section">
-            <p class="summary">
-                Experienced backend engineer with 8+ years specializing in Spring Boot microservices, database optimization, and real-time systems. 
-                Proven track record in designing scalable enterprise solutions with strong focus on reliability, security, and observability. 
-                Passionate about clean code, system architecture, and continuous learning.
+            <h2 class="section-title"><i class="fas fa-user-tie"></i> <span data-en="Professional Summary" data-fa="خلاصه حرفه‌ای">Professional Summary</span></h2>
+            <p class="summary-text" data-en="Experienced backend engineer with 7+ years specializing in Spring Boot microservices, database optimization, and real-time systems. Proven track record in designing scalable enterprise solutions with strong focus on reliability, security, and observability." data-fa="مهندس بک‌اند با بیش از ۷ سال تجربه تخصصی در میکروسرویس‌های اسپرینگ بوت، بهینه‌سازی پایگاه‌داده و سیستم‌های بلادرنگ. سابقه اثبات‌شده در طراحی راهکارهای مقیاس‌پذیر سازمانی با تمرکز قوی بر قابلیت اطمینان، امنیت و رصدپذیری.">
+                Experienced backend engineer with 7+ years specializing in Spring Boot microservices, database optimization, and real-time systems. Proven track record in designing scalable enterprise solutions with strong focus on reliability, security, and observability.
             </p>
         </section>
 
         <!-- Work Experience -->
         <section class="section">
-            <h2 class="section-title">Work Experience</h2>
-            
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div>
-                        <h3>Java Backend Developer</h3>
-                        <p class="company">Iranian Oil Association - Sakhteh Platform | Tehran</p>
+            <h2 class="section-title"><i class="fas fa-briefcase"></i> <span data-en="Work Experience" data-fa="تجربه کاری">Work Experience</span></h2>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="job-header">
+                        <div>
+                            <h3 data-en="Java Backend Developer" data-fa="توسعه‌دهنده بک‌اند جاوا">Java Backend Developer</h3>
+                            <p class="company"><i class="fas fa-building"></i> <span data-en="Iranian Oil Association - Sakht Platform, Tehran" data-fa="انجمن نفت ایران - پلتفرم ساخت، تهران">Iranian Oil Association - Sakht Platform, Tehran</span></p>
+                        </div>
+                        <span class="duration"><i class="far fa-calendar-alt"></i> <span data-en="2024 – Present" data-fa="۱۴۰۳ – اکنون">2024 – Present</span></span>
                     </div>
-                    <span class="duration">1.5 years – Present</span>
+                    <ul class="job-details">
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Developing and maintaining a Spring Boot microservices platform with 6 core and 4 supporting services for construction management workflows" data-fa="توسعه و نگهداری پلتفرم میکروسرویس اسپرینگ بوت با ۶ سرویس اصلی و ۴ سرویس پشتیبان برای گردش‌کار مدیریت ساخت‌وساز">Developing and maintaining a Spring Boot microservices platform with 6 core and 4 supporting services for construction management workflows</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Architected secure authentication system, integrated Sepidar financial platform API, and implemented asynchronous messaging using message broker for improved system decoupling" data-fa="طراحی سیستم احراز هویت امن، یکپارچه‌سازی API پلتفرم مالی سپیدار، و پیاده‌سازی پیام‌رسانی ناهمگام با message broker برای جداسازی بهتر سیستم">Architected secure authentication system, integrated Sepidar financial platform API, and implemented asynchronous messaging using message broker for improved system decoupling</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Enhanced system observability and reliability with Sentry for error tracking, ELK stack for centralized log management, Redis for caching, and PostgreSQL database optimization" data-fa="بهبود رصدپذیری و قابلیت اطمینان سیستم با Sentry برای ردیابی خطا، ELK برای مدیریت متمرکز لاگ، Redis برای کش و بهینه‌سازی پایگاه‌داده PostgreSQL">Enhanced system observability and reliability with Sentry for error tracking, ELK stack for centralized log management, Redis for caching, and PostgreSQL database optimization</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Managed fully Dockerized deployment pipeline with GitLab CI/CD and GitLab Runner for automated testing and continuous delivery" data-fa="مدیریت خط لوله استقرار کامل داکرایز شده با GitLab CI/CD و GitLab Runner برای تست خودکار و تحویل مستمر">Managed fully Dockerized deployment pipeline with GitLab CI/CD and GitLab Runner for automated testing and continuous delivery</span></li>
+                    </ul>
                 </div>
-                <ul class="details">
-                    <li>Developing and maintaining a Spring Boot microservices platform with 6 core and 4 supporting services, handling construction management workflows for internal stakeholders</li>
-                    <li>Architected secure authentication system, integrated Sepidar financial platform, and implemented asynchronous messaging using message broker for improved system decoupling</li>
-                    <li>Enhanced system observability and reliability with Sentry for error tracking, ELK stack for centralized log management, Redis for caching, and PostgreSQL for data persistence</li>
-                    <li>Managed fully Dockerized deployment pipeline with GitLab CI/CD and GitLab Runner for automated testing and continuous delivery</li>
-                </ul>
             </div>
 
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div>
-                        <h3>Java Developer</h3>
-                        <p class="company">Pinket (formerly Viratech) | Tehran</p>
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="job-header">
+                        <div>
+                            <h3 data-en="Java Developer" data-fa="توسعه‌دهنده جاوا">Java Developer</h3>
+                            <p class="company"><i class="fas fa-building"></i> <span data-en="Asta (Avan) - Helpedia Team, Tehran" data-fa="آستا (اوان) - تیم هلپدیا، تهران">Asta (Avan) - Helpedia Team, Tehran</span></p>
+                        </div>
+                        <span class="duration"><i class="far fa-calendar-alt"></i> <span data-en="2024" data-fa="۱۴۰۳">2024</span></span>
                     </div>
-                    <span class="duration">2 years</span>
+                    <ul class="job-details">
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Backend development for Helpedia platform using Spring Boot 3 and Java 21 with RabbitMQ integration for improved system communication and reliability" data-fa="توسعه بک‌اند پلتفرم Helpedia با استفاده از Spring Boot 3 و Java 21 همراه با یکپارچه‌سازی RabbitMQ برای بهبود ارتباطات سیستم و قابلیت اطمینان">Backend development for Helpedia platform using Spring Boot 3 and Java 21 with RabbitMQ integration for improved system communication and reliability</span></li>
+                    </ul>
                 </div>
-                <ul class="details">
-                    <li>Built scalable backend services for online supermarket delivery platform using Spring, Hibernate, and Spring Cloud microservices architecture</li>
-                    <li>Implemented full-text search with Elasticsearch and managed database migrations with Flyway across PostgreSQL and MongoDB</li>
-                </ul>
             </div>
 
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div>
-                        <h3>Kotlin Developer</h3>
-                        <p class="company">Arusha | Tehran</p>
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="job-header">
+                        <div>
+                            <h3 data-en="Java Developer" data-fa="توسعه‌دهنده جاوا">Java Developer</h3>
+                            <p class="company"><i class="fas fa-building"></i> <span data-en="Pinket (formerly Viratech), Tehran" data-fa="پینکت (پیش‌تر ویراتک)، تهران">Pinket (formerly Viratech), Tehran</span></p>
+                        </div>
+                        <span class="duration"><i class="far fa-calendar-alt"></i> <span data-en="2022" data-fa="۱۴۰۱">2022</span></span>
                     </div>
-                    <span class="duration">3 years</span>
+                    <ul class="job-details">
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Built scalable backend services for online supermarket delivery platform using Spring, Hibernate, and Spring Cloud microservices architecture" data-fa="ساخت سرویس‌های بک‌اند مقیاس‌پذیر برای پلتفرم تحویل سوپرمارکت آنلاین با استفاده از معماری میکروسرویس Spring، Hibernate و Spring Cloud">Built scalable backend services for online supermarket delivery platform using Spring, Hibernate, and Spring Cloud microservices architecture</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Implemented full-text search functionality with Elasticsearch and managed database migrations with Flyway across PostgreSQL and MongoDB" data-fa="پیاده‌سازی قابلیت جستجوی متنی کامل با Elasticsearch و مدیریت مهاجرت پایگاه‌داده با Flyway روی PostgreSQL و MongoDB">Implemented full-text search functionality with Elasticsearch and managed database migrations with Flyway across PostgreSQL and MongoDB</span></li>
+                    </ul>
                 </div>
-                <ul class="details">
-                    <li>Developed backend features with Spring Boot, Hibernate, and Kotlin for government and municipality projects (Iran Doc Ministry, Maknoma Municipality)</li>
-                    <li>Implemented reactive patterns using Spring WebFlux and Spring Cloud for large-scale distributed systems</li>
-                </ul>
             </div>
 
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div>
-                        <h3>Java Developer</h3>
-                        <p class="company">Asta (Avan) - Helpedia Team | Tehran</p>
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="job-header">
+                        <div>
+                            <h3 data-en="Kotlin Developer" data-fa="توسعه‌دهنده کاتلین">Kotlin Developer</h3>
+                            <p class="company"><i class="fas fa-building"></i> <span data-en="Arusha, Tehran" data-fa="آروشا، تهران">Arusha, Tehran</span></p>
+                        </div>
+                        <span class="duration"><i class="far fa-calendar-alt"></i> <span data-en="2018" data-fa="۱۳۹۷">2018</span></span>
                     </div>
-                    <span class="duration">6 months</span>
+                    <ul class="job-details">
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Developed backend features with Spring Boot, Hibernate, and Kotlin for government and municipality projects including Iran Doc (Ministry of Science) and Maknoma (Municipality)" data-fa="توسعه ویژگی‌های بک‌اند با Spring Boot، Hibernate و Kotlin برای پروژه‌های دولتی و شهرداری شامل ایران‌داک (وزارت علوم) و مکنوما (شهرداری)">Developed backend features with Spring Boot, Hibernate, and Kotlin for government and municipality projects including Iran Doc (Ministry of Science) and Maknoma (Municipality)</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-en="Implemented reactive patterns using Spring WebFlux and Spring Cloud for large-scale distributed systems" data-fa="پیاده‌سازی الگوهای واکنش‌گرا با استفاده از Spring WebFlux و Spring Cloud برای سیستم‌های توزیع‌شده در مقیاس بزرگ">Implemented reactive patterns using Spring WebFlux and Spring Cloud for large-scale distributed systems</span></li>
+                    </ul>
                 </div>
-                <ul class="details">
-                    <li>Backend development using Spring Boot 3 and Java 21 with RabbitMQ integration for improved system communication</li>
-                </ul>
             </div>
         </section>
 
         <!-- Projects -->
         <section class="section">
-            <h2 class="section-title">Projects</h2>
-            
-            <div class="project-item">
-                <div class="project-header">
-                    <h3>Real-Time Chat Application</h3>
-                    <span class="duration">1.5 years</span>
+            <h2 class="section-title"><i class="fas fa-project-diagram"></i> <span data-en="Key Projects" data-fa="پروژه‌های کلیدی">Key Projects</span></h2>
+
+            <div class="project-card">
+                <div class="project-icon"><i class="fas fa-comments"></i></div>
+                <div class="project-info">
+                    <h3 data-en="Real-Time Chat Application for Government Organization" data-fa="برنامه چت بلادرنگ برای سازمان دولتی">Real-Time Chat Application for Government Organization</h3>
+                    <p class="project-tech"><i class="fas fa-calendar"></i> <span data-en="2024 – Present" data-fa="۱۴۰۳ – اکنون">2024 – Present</span> | <i class="fas fa-tags"></i> Kotlin, Spark Framework, Real-time Messaging</p>
+                    <p data-en="Internal messaging platform similar to Telegram with server-side message persistence and real-time delivery. Serving organizational users with secure, reliable communication infrastructure for daily operations." data-fa="پلتفرم پیام‌رسانی داخلی شبیه تلگرام با ذخیره‌سازی پیام در سمت سرور و تحویل بلادرنگ. ارائه خدمات به کاربران سازمانی با زیرساخت ارتباطی امن و قابل اعتماد برای عملیات روزانه.">Internal messaging platform similar to Telegram with server-side message persistence and real-time delivery. Serving organizational users with secure, reliable communication infrastructure for daily operations.</p>
                 </div>
-                <p class="project-description">
-                    Internal messaging platform similar to Telegram with server-side message persistence and real-time delivery. 
-                    Built with Kotlin and Spark framework, supporting secure communication between organizational users.
-                </p>
             </div>
 
-            <div class="project-item">
-                <div class="project-header">
-                    <h3>Real Estate Management Platform</h3>
-                    <span class="company">2SlinkSoft GmbH (Germany)</span>
+            <div class="project-card">
+                <div class="project-icon"><i class="fas fa-print"></i></div>
+                <div class="project-info">
+                    <h3 data-en="Print Shop Management System" data-fa="سیستم مدیریت چاپخانه">Print Shop Management System</h3>
+                    <p class="project-tech"><i class="fas fa-calendar"></i> <span data-en="2020" data-fa="۱۳۹۹">2020</span> | <i class="fas fa-tags"></i> Spring Boot | 2SlinkSoft GmbH (Germany)</p>
+                    <p data-en="Order processing and workflow management platform for printing operations with production tracking and customer management." data-fa="پلتفرم پردازش سفارش و مدیریت گردش‌کار برای عملیات چاپ با ردیابی تولید و مدیریت مشتری.">Order processing and workflow management platform for printing operations with production tracking and customer management.</p>
                 </div>
-                <p class="project-description">
-                    Property rental and sales management system using Java EE, Spring Framework, and REST APIs with Jersey for handling real estate transactions.
-                </p>
             </div>
 
-            <div class="project-item">
-                <div class="project-header">
-                    <h3>Print Shop Management System</h3>
-                    <span class="company">2SlinkSoft GmbH (Germany)</span>
+            <div class="project-card">
+                <div class="project-icon"><i class="fas fa-home"></i></div>
+                <div class="project-info">
+                    <h3 data-en="Real Estate Management Platform" data-fa="پلتفرم مدیریت املاک">Real Estate Management Platform</h3>
+                    <p class="project-tech"><i class="fas fa-calendar"></i> <span data-en="2019" data-fa="۱۳۹۸">2019</span> | <i class="fas fa-tags"></i> Java EE, Spring, REST (Jersey) | 2SlinkSoft GmbH (Germany)</p>
+                    <p data-en="Property rental and sales management system with comprehensive transaction handling and listing management for real estate operations." data-fa="سیستم مدیریت اجاره و فروش املاک با مدیریت جامع تراکنش‌ها و لیست‌گذاری برای عملیات املاک.">Property rental and sales management system with comprehensive transaction handling and listing management for real estate operations.</p>
                 </div>
-                <p class="project-description">
-                    Spring Boot–based platform for order processing, workflow management, and production tracking in printing operations.
-                </p>
             </div>
         </section>
 
-        <!-- Skills -->
+        <!-- Teaching Experience -->
         <section class="section">
-            <h2 class="section-title">Technical Skills</h2>
-            
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h4>Backend & Frameworks</h4>
-                    <p>Java, Spring Boot, Spring Cloud, Spring WebFlux, Kotlin, Hibernate (JPA), Jersey, Java EE</p>
+            <h2 class="section-title"><i class="fas fa-chalkboard-teacher"></i> <span data-en="Teaching Experience" data-fa="تجربه تدریس">Teaching Experience</span></h2>
+
+            <div class="teaching-card">
+                <div class="teaching-header">
+                    <div>
+                        <h3><i class="fas fa-graduation-cap"></i> <span data-en="Java Programming Instructor" data-fa="مدرس برنامه‌نویسی جاوا">Java Programming Instructor</span></h3>
+                        <p class="teaching-location" data-en="Private Classes, Institutes & Remote Sessions" data-fa="کلاس‌های خصوصی، آموزشگاه‌ها و جلسات ریموت">Private Classes, Institutes & Remote Sessions</p>
+                    </div>
+                    <span class="duration"><i class="far fa-calendar-alt"></i> <span data-en="2019 – Present (Part-time)" data-fa="۱۳۹۸ – اکنون (پاره‌وقت)">2019 – Present (Part-time)</span></span>
                 </div>
-                
-                <div class="skill-category">
-                    <h4>Databases & Caching</h4>
-                    <p>PostgreSQL, MongoDB, Redis, Elasticsearch, MySQL</p>
+                <div class="teaching-content">
+                    <p data-en="Providing comprehensive Java education to diverse student groups with varying skill levels and professional backgrounds. Teaching methodology focuses on practical, hands-on approach combining theory with real-world applications." data-fa="ارائه آموزش جامع جاوا به گروه‌های متنوع دانشجویی با سطوح مهارتی و پیشینه حرفه‌ای متفاوت. روش تدریس بر رویکرد عملی و کاربردی با ترکیب تئوری و کاربردهای واقعی تمرکز دارد.">Providing comprehensive Java education to diverse student groups with varying skill levels and professional backgrounds. Teaching methodology focuses on practical, hands-on approach combining theory with real-world applications.</p>
+                    <ul class="teaching-topics">
+                        <li><i class="fas fa-check"></i> <strong data-en="Core Java Programming:" data-fa="برنامه‌نویسی اصول جاوا:">Core Java Programming:</strong> <span data-en="OOP principles, data structures, collections framework, exception handling" data-fa="اصول OOP، ساختمان داده، فریم‌ورک کالکشن، مدیریت استثناء">OOP principles, data structures, collections framework, exception handling</span></li>
+                        <li><i class="fas fa-check"></i> <strong data-en="Database Integration:" data-fa="یکپارچه‌سازی پایگاه‌داده:">Database Integration:</strong> <span data-en="JDBC, JPA/Hibernate, SQL optimization, transaction management" data-fa="JDBC، JPA/Hibernate، بهینه‌سازی SQL، مدیریت تراکنش">JDBC, JPA/Hibernate, SQL optimization, transaction management</span></li>
+                        <li><i class="fas fa-check"></i> <strong data-en="Network Programming:" data-fa="برنامه‌نویسی شبکه:">Network Programming:</strong> <span data-en="Socket programming, REST APIs, HTTP protocols" data-fa="برنامه‌نویسی سوکت، REST API، پروتکل‌های HTTP">Socket programming, REST APIs, HTTP protocols</span></li>
+                        <li><i class="fas fa-check"></i> <strong data-en="Linux Environment:" data-fa="محیط لینوکس:">Linux Environment:</strong> <span data-en="Command-line tools, shell scripting, server deployment basics" data-fa="ابزار خط فرمان، اسکریپت‌نویسی شل، اصول استقرار سرور">Command-line tools, shell scripting, server deployment basics</span></li>
+                        <li><i class="fas fa-check"></i> <strong data-en="Spring Framework:" data-fa="فریم‌ورک اسپرینگ:">Spring Framework:</strong> <span data-en="Spring Boot fundamentals, dependency injection, Spring MVC" data-fa="مبانی Spring Boot، تزریق وابستگی، Spring MVC">Spring Boot fundamentals, dependency injection, Spring MVC</span></li>
+                    </ul>
+                    <p class="teaching-note"><i class="fas fa-info-circle"></i> <span data-en="Currently maintaining teaching activities on a limited basis while focusing primarily on professional development work. Available for specialized training sessions and mentorship programs." data-fa="در حال حاضر فعالیت‌های تدریس را به صورت محدود حفظ کرده و عمدتاً بر کار توسعه حرفه‌ای تمرکز دارم. برای جلسات آموزشی تخصصی و برنامه‌های مربیگری در دسترس هستم.">Currently maintaining teaching activities on a limited basis while focusing primarily on professional development work. Available for specialized training sessions and mentorship programs.</span></p>
                 </div>
-                
-                <div class="skill-category">
-                    <h4>DevOps & Tools</h4>
-                    <p>Docker, GitLab CI/CD, Git, Linux, Maven, Gradle</p>
-                </div>
-                
-                <div class="skill-category">
-                    <h4>Architecture & Practices</h4>
-                    <p>Microservices, REST APIs, Authentication & Security, Message Brokers (RabbitMQ), Observability (Sentry, ELK), Flyway</p>
-                </div>
-            </div>
-            
-            <div class="languages">
-                <strong>Languages:</strong> Persian (Native), English (Professional)
             </div>
         </section>
 
-        <!-- Education & Teaching -->
+        <!-- Education -->
         <section class="section">
-            <h2 class="section-title">Education & Teaching</h2>
-            
-            <div class="education-item">
-                <div class="experience-header">
-                    <div>
-                        <h3>Software Engineering</h3>
-                        <p class="company">Non-profit University (Remote)</p>
-                    </div>
-                    <span class="duration">Currently Enrolled</span>
+            <h2 class="section-title"><i class="fas fa-university"></i> <span data-en="Education" data-fa="تحصیلات">Education</span></h2>
+
+            <div class="edu-item">
+                <div class="edu-icon"><i class="fas fa-laptop-code"></i></div>
+                <div>
+                    <h3 data-en="Software Engineering" data-fa="مهندسی نرم‌افزار">Software Engineering</h3>
+                    <p class="edu-detail" data-en="Non-profit University (Remote) | Currently Enrolled" data-fa="دانشگاه غیرانتفاعی (ریموت) | در حال تحصیل">Non-profit University (Remote) | Currently Enrolled</p>
                 </div>
             </div>
 
-            <div class="education-item">
-                <div class="experience-header">
-                    <div>
-                        <h3>Electronic Engineering</h3>
-                        <p class="company">Azad Tehran University</p>
-                    </div>
-                    <span class="duration">2015 – 2020</span>
+            <div class="edu-item">
+                <div class="edu-icon"><i class="fas fa-microchip"></i></div>
+                <div>
+                    <h3 data-en="Electronic Engineering" data-fa="مهندسی الکترونیک">Electronic Engineering</h3>
+                    <p class="edu-detail" data-en="Azad Tehran University | 2015 – 2020" data-fa="دانشگاه آزاد تهران | ۱۳۹۳ – ۱۴۰۰">Azad Tehran University | 2015 – 2020</p>
+                    <p class="edu-description" data-en="Specialized in designing electronic circuits, devices, microprocessors, and microcontrollers" data-fa="تخصص در طراحی مدارهای الکترونیکی، دستگاه‌ها، میکروپروسسورها و میکروکنترلرها">Specialized in designing electronic circuits, devices, microprocessors, and microcontrollers</p>
                 </div>
-            </div>
-
-            <div class="education-item">
-                <div class="experience-header">
-                    <div>
-                        <h3>Java Instructor</h3>
-                        <p class="company">Remote & Onsite (Part-time)</p>
-                    </div>
-                    <span class="duration">2019 – Present</span>
-                </div>
-                <p class="teaching-desc">Teaching Java programming with focus on databases, networks, and Linux fundamentals to diverse student groups.</p>
             </div>
         </section>
-    </div>
+    </main>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
