@@ -23,7 +23,6 @@ function updateLanguage() {
     });
 }
 
-// Initialize with English
 document.addEventListener('DOMContentLoaded', () => {
     updateLanguage();
 });
